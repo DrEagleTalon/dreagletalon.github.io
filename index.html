@@ -7,10 +7,44 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 2em auto;
-            max-width: 900px;
-            line-height: 1.6;
+            margin: 0;
+            max-width: 100vw;
             color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 260px;
+            background: #e0f7fa;
+            padding: 2em 1em 2em 2em;
+            border-right: 1px solid #ddd;
+        }
+        .sidebar h2 {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+            color: #005f73;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin-bottom: 0.7em;
+        }
+        .sidebar a {
+            color: #0a9396;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            flex: 1;
+            padding: 2em;
         }
         h1, h2, h3 {
             color: #005f73;
@@ -52,32 +86,54 @@
     </style>
 </head>
 <body>
+<div class="container">
+    <nav class="sidebar">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="electrical-fundamentals.html">I. Electrical Fundamentals</a></li>
+            <li><a href="power-distribution.html">II. Power Distribution & Wiring</a></li>
+            <li><a href="control-devices.html">III. Control Devices & Circuits</a></li>
+            <li><a href="motor-control.html">IV. Motor Control Systems</a></li>
+            <li><a href="plcs-hardware.html">V. PLCs & Automation Hardware</a></li>
+            <li><a href="plc-programming.html">VI. PLC Programming & Logic</a></li>
+            <li><a href="hmi-scada.html">VII. HMI / SCADA Systems</a></li>
+            <li><a href="networks-protocols.html">VIII. Industrial Networks & Protocols</a></li>
+            <li><a href="troubleshooting.html">IX. Troubleshooting & Diagnostics</a></li>
+            <li><a href="system-integration.html">X. System Integration & Commissioning</a></li>
+            <li><a href="standards-codes.html">XI. Standards & Codes</a></li>
+            <li><a href="safety-systems.html">XII. Safety Systems (Advanced)</a></li>
+            <li><a href="specialty-topics.html">XIII. Specialty Topics</a></li>
+            <li><a href="soft-skills.html">XIV. Bonus – Soft Skills & Workflow</a></li>
+            <li><a href="notes-tips.html">XV. Notes, Comments & Tips</a></li>
+        </ul>
+    </nav>
+    <div class="main-content">
+        <h1>Industrial Automation Field Guide</h1>
 
-<h1>Industrial Automation Field Guide</h1>
+        <p><em>A living, open-source field guide for industrial controls, automation, electrical, process, and systems technicians and engineers.</em></p>
 
-<p><em>A living, open-source field guide for industrial controls, automation, electrical, process, and systems technicians and engineers.</em></p>
+        <h2>What You'll Find Inside</h2>
+        <ul>
+            <li>Basic electrical theory, wiring, and power distribution</li>
+            <li>Motor control systems, VFDs, and starters</li>
+            <li>PLC hardware, programming, and troubleshooting</li>
+            <li>HMI & SCADA basics</li>
+            <li>Industrial protocols and networking</li>
+            <li>Safety systems and standards</li>
+            <li>Troubleshooting methodologies</li>
+            <li>Preventive & predictive maintenance</li>
+        </ul>
 
-<h2>What You'll Find Inside</h2>
-<ul>
-    <li>Basic electrical theory, wiring, and power distribution</li>
-    <li>Motor control systems, VFDs, and starters</li>
-    <li>PLC hardware, programming, and troubleshooting</li>
-    <li>HMI & SCADA basics</li>
-    <li>Industrial protocols and networking</li>
-    <li>Safety systems and standards</li>
-    <li>Troubleshooting methodologies</li>
-    <li>Preventive & predictive maintenance</li>
-</ul>
+        <h2>How This Guide Works</h2>
+        <p>
+            This field guide is organized using consistent <strong>YAML metadata</strong> at the top of every topic page. 
+            It powers linking, indexing, and version control.
+        </p>
+        <p>Each page also has a local changelog to track edits, examples, and why changes were made.</p>
 
-<h2>How This Guide Works</h2>
-<p>
-    This field guide is organized using consistent <strong>YAML metadata</strong> at the top of every topic page. 
-    It powers linking, indexing, and version control.
-</p>
-<p>Each page also has a local changelog to track edits, examples, and why changes were made.</p>
-
-<h3>YAML Example</h3>
-<pre><code>
+        <h3>YAML Example</h3>
+        <pre><code>
 ---
 title: "Motor Contactors"
 version: "1.0.0"
@@ -97,52 +153,53 @@ reviewed: "2025-07-07"
 ---
 </code></pre>
 
-<h3>Versioning</h3>
-<p>Follows a simple <code>XX.YY.ZZ</code> system:</p>
-<ul>
-    <li><strong>MAJOR</strong> - major new sections or overhauls</li>
-    <li><strong>MINOR</strong> - new topics, big examples, diagrams</li>
-    <li><strong>PATCH</strong> - typo fixes, tiny clarifications</li>
-</ul>
+        <h3>Versioning</h3>
+        <p>Follows a simple <code>XX.YY.ZZ</code> system:</p>
+        <ul>
+            <li><strong>MAJOR</strong> - major new sections or overhauls</li>
+            <li><strong>MINOR</strong> - new topics, big examples, diagrams</li>
+            <li><strong>PATCH</strong> - typo fixes, tiny clarifications</li>
+        </ul>
 
-<table>
-    <thead>
-        <tr><th>Version</th><th>Meaning</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>1.0.0</td><td>First complete draft with core sections</td></tr>
-        <tr><td>1.1.0</td><td>Added IO-Link Devices section</td></tr>
-        <tr><td>1.1.3</td><td>Fixed typos in PLC chapter, added diagrams</td></tr>
-        <tr><td>2.0.0</td><td>Major restructure: moved Troubleshooting up, added Learning Paths</td></tr>
-        <tr><td>2.1.0</td><td>Added SCADA Cloud chapter</td></tr>
-    </tbody>
-</table>
+        <table>
+            <thead>
+                <tr><th>Version</th><th>Meaning</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1.0.0</td><td>First complete draft with core sections</td></tr>
+                <tr><td>1.1.0</td><td>Added IO-Link Devices section</td></tr>
+                <tr><td>1.1.3</td><td>Fixed typos in PLC chapter, added diagrams</td></tr>
+                <tr><td>2.0.0</td><td>Major restructure: moved Troubleshooting up, added Learning Paths</td></tr>
+                <tr><td>2.1.0</td><td>Added SCADA Cloud chapter</td></tr>
+            </tbody>
+        </table>
 
-<h3>Typical YAML Values</h3>
-<table>
-    <thead>
-        <tr><th>Property</th><th>Allowed or Typical Values</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>status</td><td>draft, in-review, final</td></tr>
-        <tr><td>difficulty</td><td>Beginner, Intermediate, Advanced</td></tr>
-        <tr><td>tags</td><td>Hashtags list, e.g. ["#motor", "#fieldguide"]</td></tr>
-        <tr><td>standards</td><td>["NEC 430"], ["none"]</td></tr>
-        <tr><td>equipment</td><td>["Allen Bradley", "Siemens"], ["none"]</td></tr>
-    </tbody>
-</table>
+        <h3>Typical YAML Values</h3>
+        <table>
+            <thead>
+                <tr><th>Property</th><th>Allowed or Typical Values</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>status</td><td>draft, in-review, final</td></tr>
+                <tr><td>difficulty</td><td>Beginner, Intermediate, Advanced</td></tr>
+                <tr><td>tags</td><td>Hashtags list, e.g. ["#motor", "#fieldguide"]</td></tr>
+                <tr><td>standards</td><td>["NEC 430"], ["none"]</td></tr>
+                <tr><td>equipment</td><td>["Allen Bradley", "Siemens"], ["none"]</td></tr>
+            </tbody>
+        </table>
 
-<h2>Want to Help?</h2>
-<p>This is a <strong>read-only site for reference</strong>. To contribute to the field guide, propose edits, or add examples from your shop floor, please visit our <a href="https://github.com/">GitHub repository</a>.</p>
-<p>Fork the repo, make your changes, and open a pull request. See our <code>how-to-use-this-vault.md</code> in the repo for style, metadata, and changelog tips.</p>
+        <h2>Want to Help?</h2>
+        <p>This is a <strong>read-only site for reference</strong>. To contribute, propose edits, or add examples, please visit our <a href="https://github.com/DrEagleTalon/Industrial-Automation-Field-Guide" target="_blank">main Markdown repository</a> on GitHub.</p>
+        <p>Fork <a href="https://github.com/DrEagleTalon/Industrial-Automation-Field-Guide" target="_blank">DrEagleTalon/Industrial-Automation-Field-Guide</a>, make your changes in Markdown, and open a pull request. See <code>how-to-use-this-vault.md</code> in that repo for style, metadata, and changelog tips.</p>
 
-<h2>License</h2>
-<p>This project is licensed under the <strong>GNU GPLv3</strong>. See the <a href="LICENSE">LICENSE file</a> on GitHub for details.</p>
+        <h2>License</h2>
+        <p>This project is licensed under the <strong>GNU GPLv3</strong>. See the <a href="LICENSE">LICENSE file</a> on GitHub for details.</p>
 
-<div class="footer">
-    <p><strong>Created and maintained by Yusuf Talan Saunders.</strong></p>
-    <p><em>Industrial Automation Field Guide: A comprehensive, open-source resource for automation professionals.</em></p>
+        <div class="footer">
+            <p><strong>Created and maintained by Yusuf Talan Saunders.</strong></p>
+            <p><em>Industrial Automation Field Guide: A comprehensive, open-source resource for automation professionals.</em></p>
+        </div>
+    </div>
 </div>
-
 </body>
 </html>
