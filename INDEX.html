@@ -8,19 +8,32 @@
         body {
             font-family: Arial, sans-serif;
             margin: 2em auto;
-            max-width: 800px;
+            max-width: 900px;
             line-height: 1.6;
             color: #333;
         }
-        h1, h2 {
+        h1, h2, h3 {
             color: #005f73;
         }
-        code {
+        code, pre {
             background-color: #f4f4f4;
-            padding: 0.2em;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            display: block;
+            overflow-x: auto;
         }
-        .section {
-            margin-bottom: 2em;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.6em;
+            text-align: left;
+        }
+        th {
+            background-color: #e0f7fa;
         }
         a {
             color: #0a9396;
@@ -34,7 +47,7 @@
             text-align: center;
             border-top: 1px solid #ddd;
             padding-top: 1em;
-            margin-top: 2em;
+            margin-top: 3em;
         }
     </style>
 </head>
@@ -42,53 +55,93 @@
 
 <h1>Industrial Automation Field Guide</h1>
 
-<div class="section">
-    <p>A living, open-source field guide for industrial controls, automation, electrical, process, and systems technicians and engineers.</p>
-    <h2>Contents Include:</h2>
-    <ul>
-        <li>Basic electrical theory, wiring, and power distribution</li>
-        <li>Motor control systems, VFDs, and starters</li>
-        <li>PLC hardware, programming, and troubleshooting</li>
-        <li>HMI & SCADA basics</li>
-        <li>Industrial protocols and networking</li>
-        <li>Safety systems and standards</li>
-        <li>Troubleshooting methodologies</li>
-        <li>Preventive & predictive maintenance</li>
-    </ul>
-</div>
+<p><em>A living, open-source field guide for industrial controls, automation, electrical, process, and systems technicians and engineers.</em></p>
 
-<div class="section">
-    <h2>License & Contributions</h2>
-    <p>This project is licensed under the <strong>GNU GPLv3</strong>. See the <a href="LICENSE">LICENSE file</a> for details.</p>
-    <p><strong>Contributions are welcome!</strong> Fork the <a href="https://github.com/">repository</a>, make your changes, and submit a pull request. For detailed guidelines, see the <a href="how-to-use-this-vault.md">How to Use This Vault</a>.</p>
-</div>
+<h2>What You'll Find Inside</h2>
+<ul>
+    <li>Basic electrical theory, wiring, and power distribution</li>
+    <li>Motor control systems, VFDs, and starters</li>
+    <li>PLC hardware, programming, and troubleshooting</li>
+    <li>HMI & SCADA basics</li>
+    <li>Industrial protocols and networking</li>
+    <li>Safety systems and standards</li>
+    <li>Troubleshooting methodologies</li>
+    <li>Preventive & predictive maintenance</li>
+</ul>
 
-<div class="section">
-    <h2>Metadata & YAML Standards</h2>
-    <p>Every topic in this guide uses consistent YAML frontmatter for organization, linking, and version control.</p>
-    <pre><code>
+<h2>How This Guide Works</h2>
+<p>
+    This field guide is organized using consistent <strong>YAML metadata</strong> at the top of every topic page. 
+    It powers linking, indexing, and version control.
+</p>
+<p>Each page also has a local changelog to track edits, examples, and why changes were made.</p>
+
+<h3>YAML Example</h3>
+<pre><code>
+---
 title: "Motor Contactors"
 version: "1.0.0"
 status: "final"
 author: ["Yusuf Talan Saunders"]
 editors: ["Fatou Cham"]
-contributors: ["Rickena Saunders"]
+contributors: ["Rickena Saunders", "Team at Huhtamaki"]
 category: ["Motor Control Systems"]
-tags: ["#motor", "#starter"]
+tags: ["#motor", "#starter", "#troubleshooting"]
 difficulty: "Intermediate"
-related-topics: ["Overload Relays"]
-standards: ["NEC 430"]
-equipment: ["Allen Bradley 100-C09"]
+related-topics: ["Overload Relays", "Motor Wiring & Rotation Checking"]
+standards: ["NEC 430", "IEC 60947-4-1"]
+equipment: ["Allen Bradley 100-C09", "Siemens Sirius"]
 to-be-completed-by: "2025-09-01"
 last-updated: "2025-07-07"
 reviewed: "2025-07-07"
-    </code></pre>
-    <p>Learn more about YAML properties and best practices in the full <a href="how-to-use-this-vault.md">documentation guide</a>.</p>
-</div>
+---
+</code></pre>
+
+<h3>Versioning</h3>
+<p>Follows a simple <code>XX.YY.ZZ</code> system:</p>
+<ul>
+    <li><strong>MAJOR</strong> - major new sections or overhauls</li>
+    <li><strong>MINOR</strong> - new topics, big examples, diagrams</li>
+    <li><strong>PATCH</strong> - typo fixes, tiny clarifications</li>
+</ul>
+
+<table>
+    <thead>
+        <tr><th>Version</th><th>Meaning</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>1.0.0</td><td>First complete draft with core sections</td></tr>
+        <tr><td>1.1.0</td><td>Added IO-Link Devices section</td></tr>
+        <tr><td>1.1.3</td><td>Fixed typos in PLC chapter, added diagrams</td></tr>
+        <tr><td>2.0.0</td><td>Major restructure: moved Troubleshooting up, added Learning Paths</td></tr>
+        <tr><td>2.1.0</td><td>Added SCADA Cloud chapter</td></tr>
+    </tbody>
+</table>
+
+<h3>Typical YAML Values</h3>
+<table>
+    <thead>
+        <tr><th>Property</th><th>Allowed or Typical Values</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>status</td><td>draft, in-review, final</td></tr>
+        <tr><td>difficulty</td><td>Beginner, Intermediate, Advanced</td></tr>
+        <tr><td>tags</td><td>Hashtags list, e.g. ["#motor", "#fieldguide"]</td></tr>
+        <tr><td>standards</td><td>["NEC 430"], ["none"]</td></tr>
+        <tr><td>equipment</td><td>["Allen Bradley", "Siemens"], ["none"]</td></tr>
+    </tbody>
+</table>
+
+<h2>Want to Help?</h2>
+<p>This is a <strong>read-only site for reference</strong>. To contribute to the field guide, propose edits, or add examples from your shop floor, please visit our <a href="https://github.com/">GitHub repository</a>.</p>
+<p>Fork the repo, make your changes, and open a pull request. See our <code>how-to-use-this-vault.md</code> in the repo for style, metadata, and changelog tips.</p>
+
+<h2>License</h2>
+<p>This project is licensed under the <strong>GNU GPLv3</strong>. See the <a href="LICENSE">LICENSE file</a> on GitHub for details.</p>
 
 <div class="footer">
     <p><strong>Created and maintained by Yusuf Talan Saunders.</strong></p>
-    <p><em>Industrial Automation Field Guide: A comprehensive resource for automation professionals.</em></p>
+    <p><em>Industrial Automation Field Guide: A comprehensive, open-source resource for automation professionals.</em></p>
 </div>
 
 </body>
