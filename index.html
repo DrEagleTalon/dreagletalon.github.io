@@ -4,28 +4,46 @@
     <meta charset="UTF-8">
     <title>Industrial Automation Field Guide</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+    =============================================================
+    STYLE & FORMAT STANDARDS FOR INDUSTRIAL AUTOMATION FIELD GUIDE
+    =============================================================
+    - Color Scheme: Modern blues and purples, gradients, and soft backgrounds
+    - Fonts: Consolas, SF Pro Display, Segoe UI, Arial, Apple-inspired fonts
+    - Shapes: Rounded corners on containers, tables, code blocks, and buttons
+    - Layout: Centered main content, sidebar navigation, responsive design
+    - Code & Math: Use monospace fonts and styled blocks for formulas
+    - Tables: Soft backgrounds, rounded corners, clear borders
+    - Comments: All major sections and style blocks are well-commented for clarity
+    - Accessibility: High contrast, readable fonts, and large clickable areas
+    - Consistency: All topic pages use the same style and layout for a unified look
+    =============================================================
+    -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Consolas', 'SF Pro Display', 'Segoe UI', 'Arial', sans-serif;
+            background: linear-gradient(120deg, #3a3d5c 0%, #5f6caf 100%);
+            color: #f4f4f4;
             margin: 0;
-            max-width: 100vw;
-            color: #333;
-            background: #f8f9fa;
+            padding: 0;
         }
         .container {
             display: flex;
             min-height: 100vh;
+            max-width: 100vw;
         }
         .sidebar {
             width: 260px;
-            background: #e0f7fa;
+            background: #2d2e4d;
             padding: 2em 1em 2em 2em;
-            border-right: 1px solid #ddd;
+            border-right: 2px solid #4b4e7a;
+            border-radius: 18px 0 0 18px;
+            box-shadow: 0 4px 24px rgba(60,60,120,0.10);
         }
         .sidebar h2 {
             font-size: 1.2em;
             margin-bottom: 1em;
-            color: #005f73;
+            color: #a7c7ff;
         }
         .sidebar ul {
             list-style: none;
@@ -35,53 +53,69 @@
             margin-bottom: 0.7em;
         }
         .sidebar a {
-            color: #0a9396;
+            color: #a7c7ff;
             text-decoration: none;
             font-weight: bold;
+            border-radius: 6px;
+            padding: 0.2em 0.7em;
+            transition: background 0.2s;
         }
         .sidebar a:hover {
-            text-decoration: underline;
+            background: #5f6caf;
+            color: #fff;
         }
         .main-content {
             flex: 1;
-            padding: 2em;
+            padding: 2em 2.5em;
+            background: #23244a;
+            border-radius: 0 18px 18px 0;
+            box-shadow: 0 4px 24px rgba(60,60,120,0.10);
         }
-        h1, h2, h3 {
-            color: #005f73;
+        h1, h2, h3, h4 {
+            color: #a7c7ff;
+            font-family: 'SF Pro Display', 'Segoe UI', 'Arial', sans-serif;
         }
         code, pre {
-            background-color: #f4f4f4;
-            padding: 0.2em 0.4em;
-            border-radius: 4px;
+            background: #2d2e4d;
+            color: #e0e7ff;
+            border-radius: 8px;
+            padding: 0.3em 0.7em;
+            font-family: 'Consolas', 'SF Mono', 'Menlo', monospace;
+            font-size: 1em;
             display: block;
             overflow-x: auto;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1em 0;
+            margin: 1.5em 0;
+            background: #2d2e4d;
+            border-radius: 10px;
+            overflow: hidden;
         }
         th, td {
-            border: 1px solid #ddd;
-            padding: 0.6em;
+            border: 1px solid #4b4e7a;
+            padding: 0.7em;
             text-align: left;
         }
         th {
-            background-color: #e0f7fa;
-        }
-        a {
-            color: #0a9396;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+            background: #4b4e7a;
+            color: #c7dfff;
         }
         .footer {
             font-size: 0.9em;
             text-align: center;
-            border-top: 1px solid #ddd;
+            color: #b0b8d1;
+            border-top: 1px solid #4b4e7a;
             padding-top: 1em;
             margin-top: 3em;
+        }
+        a {
+            color: #a7c7ff;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #fff;
         }
     </style>
 </head>
