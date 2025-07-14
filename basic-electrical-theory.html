@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Electrical Theory | Industrial Automation Field Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Consolas', 'SF Pro Display', 'Segoe UI', 'Arial', sans-serif;
+            background: linear-gradient(120deg, #3a3d5c 0%, #5f6caf 100%);
+            color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2em auto;
+            background: #23244a;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(60,60,120,0.18);
+            padding: 2em 2.5em;
+        }
+        h1, h2, h3, h4 {
+            color: #a7c7ff;
+            font-family: 'SF Pro Display', 'Segoe UI', 'Arial', sans-serif;
+        }
+        code, pre {
+            background: #2d2e4d;
+            color: #e0e7ff;
+            border-radius: 8px;
+            padding: 0.3em 0.7em;
+            font-family: 'Consolas', 'SF Mono', 'Menlo', monospace;
+            font-size: 1em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+            background: #2d2e4d;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #4b4e7a;
+            padding: 0.7em;
+            text-align: left;
+        }
+        th {
+            background: #4b4e7a;
+            color: #c7dfff;
+        }
+        .meta {
+            background: #2d2e4d;
+            border-radius: 10px;
+            padding: 1em;
+            margin-bottom: 1.5em;
+            font-size: 1em;
+        }
+        .tag {
+            background: #5f6caf;
+            color: #fff;
+            border-radius: 6px;
+            padding: 0.2em 0.7em;
+            margin-right: 0.5em;
+            font-size: 0.95em;
+            display: inline-block;
+        }
+        .section {
+            margin-bottom: 2em;
+        }
+        .formula {
+            background: #23244a;
+            color: #a7c7ff;
+            border-radius: 8px;
+            padding: 0.2em 0.7em;
+            font-family: 'Consolas', 'SF Mono', monospace;
+            font-size: 1.1em;
+            display: inline-block;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #b0b8d1;
+            margin-top: 2em;
+        }
+        a {
+            color: #a7c7ff;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Basic Electrical Theory</h1>
+    <div class="meta">
+        <strong>Category:</strong> Electrical Fundamentals<br>
+        <strong>Tags:</strong> <span class="tag">#electrical</span> <span class="tag">#ohmslaw</span> <span class="tag">#power</span> <span class="tag">#basic-theory</span><br>
+        <strong>Difficulty:</strong> Beginner<br>
+        <strong>Last Updated:</strong> 2025-07-07<br>
+        <strong>Version:</strong> 1.0.0<br>
+        <strong>Status:</strong> Final
+    </div>
+    <div class="section">
+        <h2>Description</h2>
+        <p>This topic lays the foundation of basic electrical concepts critical to any work in automation, controls, or industrial maintenance. It covers what electricity is, the fundamental relationships between voltage, current, and resistance (Ohm’s Law), power, energy, and the differences between AC and DC.</p>
+        <p>It also introduces key ideas about single-phase and three-phase power systems, which are essential for understanding how industrial plants operate.</p>
+    </div>
+    <div class="section">
+        <h2>Core Concepts</h2>
+        <h3>What is it?</h3>
+        <p>Electricity is the movement of electrons (tiny charged particles) through a conductor like copper wire.</p>
+        <ul>
+            <li><strong>Voltage (V):</strong> electrical pressure, measured in volts (V). It pushes electrons.</li>
+            <li><strong>Current (I):</strong> flow of electrons, measured in amperes (A).</li>
+            <li><strong>Resistance (R):</strong> opposition to flow, measured in ohms (Ω).</li>
+        </ul>
+        <p>If you imagine water in a pipe:</p>
+        <ul>
+            <li>Voltage = water pressure</li>
+            <li>Current = flow rate (gallons/min)</li>
+            <li>Resistance = pipe restrictions</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h3>How it works</h3>
+        <h4>Ohm’s Law</h4>
+        <div class="formula">V = I × R</div>
+        <p>This means:</p>
+        <ul>
+            <li>Increase voltage → current increases (if resistance is constant).</li>
+            <li>Increase resistance → current decreases (if voltage is constant).</li>
+        </ul>
+        <p><strong>Example:</strong></p>
+        <div class="formula">I = V / R = 120V / 12Ω = 10A</div>
+        <h4>Power</h4>
+        <p>The rate of doing electrical work, measured in <strong>watts (W)</strong>:</p>
+        <div class="formula">P = V × I</div>
+        <p>or for purely resistive loads:</p>
+        <div class="formula">P = I² × R</div>
+        <p><strong>Example:</strong></p>
+        <div class="formula">P = 120V × 10A = 1200W (1.2 kW)</div>
+        <h4>Energy</h4>
+        <p>Power used over time, measured in <strong>kilowatt-hours (kWh)</strong>:</p>
+        <div class="formula">Energy = Power × Time</div>
+        <p><strong>Example:</strong></p>
+        <div class="formula">Energy = 2 kW × 5 h = 10 kWh</div>
+    </div>
+    <div class="section">
+        <h3>When to Use</h3>
+        <p>Basic electrical theory is used daily by technicians and engineers to:</p>
+        <ul>
+            <li>Calculate circuit current for wire sizing and overloads.</li>
+            <li>Troubleshoot voltage drops causing machines to fault.</li>
+            <li>Understand overheating wires or motors (overcurrent).</li>
+            <li>Diagnose control circuits that under-voltage and fail to pull in contactors.</li>
+        </ul>
+        <p>Without these basics, you’d never confidently size a starter, fuse, or wire run.</p>
+    </div>
+    <div class="section">
+        <h2>Specifications & Parameters</h2>
+        <table>
+            <thead>
+                <tr><th>Parameter</th><th>Typical Value / Range</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Control Voltage</td><td>24 VDC, 120 VAC</td><td>Common for control circuits</td></tr>
+                <tr><td>Line Voltage</td><td>120/240/480 VAC</td><td>Typical industrial power supplies</td></tr>
+                <tr><td>Current Ranges</td><td>Milliamps to hundreds of A</td><td>From sensors to large motors</td></tr>
+                <tr><td>Resistance</td><td>0.1 Ω to MΩ</td><td>Depends on load or insulation context</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="section">
+        <h2>Wiring & Diagrams</h2>
+        <h4>Basic DC Circuit Example:</h4>
+        <pre>+24VDC ––[ Fuse ]––[ Switch ]––[ Lamp ]–– 0VDC</pre>
+        <ul>
+            <li>When the switch closes, voltage pushes current through the lamp’s resistance, lighting it up.</li>
+            <li>The fuse protects against short circuits by melting if current is too high.</li>
+        </ul>
+        <h4>Simple AC Motor Circuit:</h4>
+        <pre>L1 --[ Breaker ]--[ Contactor ]--[ Motor ]
+
+N ----------------[ Contactor ]--[ Motor ]</pre>
+        <ul>
+            <li>Breaker protects against overcurrent (shorts, overloads).</li>
+            <li>Contactor is an electrically controlled switch.</li>
+            <li>Motor is the load. N (neutral) provides return path.</li>
+        </ul>
+        <h4>Three-Phase Example (typical industrial motor):</h4>
+        <pre>L1 ––[ Overload ]––+
+L2 ––[ Overload ]––+––[ Motor ]
+L3 ––[ Overload ]––+</pre>
+        <ul>
+            <li>Overload relay cuts the circuit if any phase draws too much current.</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Troubleshooting & Diagnostics</h2>
+        <table>
+            <thead>
+                <tr><th>Symptom</th><th>Likely Cause</th><th>Diagnostic Step</th><th>Tool Needed</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>No voltage at load</td><td>Open fuse, loose wire</td><td>Check continuity across fuse & wire</td><td>Multimeter</td></tr>
+                <tr><td>Motor won’t start</td><td>Contactor not pulling in</td><td>Verify coil voltage present</td><td>Multimeter</td></tr>
+                <tr><td>Overload tripping</td><td>Phase imbalance or dirt</td><td>Clamp each phase for imbalance</td><td>Clamp meter</td></tr>
+                <tr><td>Low voltage at load</td><td>Undersized wiring run</td><td>Measure voltage at source vs load</td><td>Multimeter</td></tr>
+            </tbody>
+        </table>
+        <p>Always check for voltage under load — an unloaded circuit might appear fine.</p>
+    </div>
+    <div class="section">
+        <h2>Field Checklist</h2>
+        <ul>
+            <li>Verify line voltage at incoming terminals.</li>
+            <li>Confirm control circuit voltage (e.g. 24 VDC or 120 VAC) matches device spec.</li>
+            <li>Ensure wire size matches load current draw.</li>
+            <li>Inspect terminals for tight, clean connections.</li>
+            <li>Perform voltage drop checks under full load.</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Reference Notes</h2>
+        <ul>
+            <li>NEC Article 210 (branch circuits)</li>
+            <li>NEC 240 (overcurrent protection)</li>
+            <li>NEC 250 (grounding & bonding)</li>
+            <li>IEC 60364 series for global installations</li>
+            <li>Manufacturer data sheets for motor, starter, or panel ratings</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Related Topics</h2>
+        <ul>
+            <li><a href="lockout-tagout.html">Lockout Tagout (LOTO) Procedures</a></li>
+            <li><a href="tools-of-the-trade.html">Tools of the Trade</a></li>
+            <li><a href="wire-color-codes.html">Wire Color Codes (US & IEC)</a></li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Local Changelog</h2>
+        <table>
+            <thead>
+                <tr><th>Date</th><th>Version</th><th>Author</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>2025-07-07</td><td>1.0.0</td><td>Yusuf Talan Saunders</td><td>Created complete first edition of topic.</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="footer">
+        <p>Return to <a href="electrical-fundamentals.html">Electrical Fundamentals</a> | <a href="index.html">Home</a></p>
+    </div>
+</div>
+</body>
+</html>
